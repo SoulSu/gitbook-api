@@ -6,6 +6,8 @@ the public api is for gitbook
 
 ### API LIST
 
+> API is form [https://github.com/GitbookIO/api-guide](https://github.com/GitbookIO/api-guide)
+
 |name|url|
 |----|----|
 |get author info|[https://api.gitbook.com/author/{user_name}](#https://api.gitbook.com/author/{user_name})|
