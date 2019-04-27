@@ -2,6 +2,8 @@
 
 the public api is for gitbook
 
+### How to use?
+
 
 
 ### API LIST
@@ -20,39 +22,6 @@ the public api is for gitbook
 
 #### API example
 
-##### https://api.gitbook.com/author/wizardforcel
-
-```json
-{
-  "id": "547153d82e958e0200381334",
-  "hasMigrated": false,
-  "type": "User",
-  "username": "wizardforcel",
-  "name": "wizardforcel",
-  "location": "",
-  "website": "https://github.com/wizardforcel",
-  "bio": "",
-  "verified": true,
-  "locked": false,
-  "site_admin": false,
-  "urls": {
-    "profile": "https://legacy.gitbook.com/@wizardforcel",
-    "stars": "https://legacy.gitbook.com/@wizardforcel/starred",
-    "avatar": "https://legacy.gitbook.com/@wizardforcel/avatar"
-  },
-  "permissions": {
-    "edit": null,
-    "admin": null
-  },
-  "dates": {
-    "created": "2014-11-23T03:26:16.278Z"
-  },
-  "counts": {},
-  "github": {
-    "username": "wizardforcel"
-  }
-}
-```
 
 
 ##### https://api.gitbook.com/book/wizardforcel/vbird-linux-basic-4e
