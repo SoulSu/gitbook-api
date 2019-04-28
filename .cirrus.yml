@@ -20,7 +20,8 @@ docker_builder:
   env:
     DOCKER_USERNAME: ENCRYPTED[5a455db53d46b7fdd7c39970f2798f9dcde12eb2f7e941b815efa938785bb8ea178e3841f7b2caea5428f7db3ce11328]
     DOCKER_PASSWORD: ENCRYPTED[1d5961e8946fc5ba8ce8b3bb487196936de0c6bf80fbd8f805c2591fd0b4d65148b9f8d86f5560903a0a90118d462412]
-  build_script: make docker-build
+  build_app_script: go build -v -o app *.go
+  build_script: docker build -t soooooul/gitbook-api:latest .
   login_script: docker login hub.docker.com  --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
   push_script: docker push soooooul/gitbook-api:lastest
   
