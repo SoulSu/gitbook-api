@@ -8,8 +8,10 @@ test_task:
   modules_cache:
     fingerprint_script: cat go.sum
     folder: $GOPATH/pkg/mod
+  binaries_artifacts:
+    path: "app"
   get_script: go get ./...
-  build_script: go build ./...
+  build_script: go build -v -o app *.go
   test_script: go test ./...
 
 docker_builder:
