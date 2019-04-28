@@ -14,7 +14,7 @@ build: clean
 	$(TARGET_BUILD)
 
 run: build
-	./app
+	RUNTIME_CONFIG=./config/ ./app server
 
 clean:
 	$(GO) clean

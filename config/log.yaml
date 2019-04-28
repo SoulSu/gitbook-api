@@ -1,0 +1,2 @@
+formatter: json # text|json
+level: trace

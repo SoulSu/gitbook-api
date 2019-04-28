@@ -15,10 +15,10 @@
 package cmd
 
 import (
-	"fmt"
+	"github.com/SoulSu/gitbook-api/cmd/server"
+	"github.com/SoulSu/gitbook-api/log"
 
 	"github.com/spf13/cobra"
-	// "github.com/SoulSu/gitbook-api/cmd/server"
 )
 
 var port string
@@ -29,8 +29,10 @@ var serverCmd = &cobra.Command{
 	Short: "run server",
 	Long:  `run server model`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("server called")
+		log.Debugf("start server on:%s", port)
+		if err := server.RunServer(port); err != nil {
 
+		}
 	},
 }
 
