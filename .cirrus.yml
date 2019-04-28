@@ -15,6 +15,7 @@ test_task:
     folder: "./app"
 
 docker_builder:
+  image: golang:1.12
   depends_on: 
     - test
   env:
