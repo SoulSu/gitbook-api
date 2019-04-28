@@ -1,5 +1,8 @@
 # gitbook-api
 
+[![Build Status](https://api.cirrus-ci.com/github/SoulSu/gitbook-api.svg)](https://cirrus-ci.com/github/SoulSu/gitbook-api)
+
+
 the public api is for gitbook
 
 ### How to use?
