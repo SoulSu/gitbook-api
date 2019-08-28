@@ -1,12 +1,12 @@
 
 GO?=go
 
-TARGET="app"
+TARGET="gitbook-api"
 
 BUILD_VERSION=$(shell git rev-parse --short HEAD)
 BUILD_TIME=$(shell date +"%Y-%m-%d %H:%M:%S")
 
-TARGET_BUILD=$(GO) build -v -o $(TARGET) -ldflags "-w -s -X 'main.BuildVersion=${BUILD_VERSION}' -X 'main.BuildTime=${BUILD_TIME}'" main.go
+TARGET_BUILD=$(GO) build -v -o $(TARGET) -ldflags "-w -s -X 'github.com/SoulSu/gitbook-api/cmd.BuildVersion=${BUILD_VERSION}' -X 'github.com/SoulSu/gitbook-api/cmd.BuildTime=${BUILD_TIME}'" main.go
 
 .PHONY: build clean run build-docker
 

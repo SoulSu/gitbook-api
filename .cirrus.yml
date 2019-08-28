@@ -10,9 +10,9 @@ test_task:
     folder: $GOPATH/pkg/mod
   get_script: go get ./...
   test_script: go test ./...
-  build_script: go build -v -o app *.go
+  build_script: go build -v -o gitbook-api *.go
   binaries_cache:
-    folder: "./app"
+    folder: "./gitbook-api"
 
 docker_builder:
   depends_on: 

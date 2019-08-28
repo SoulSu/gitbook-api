@@ -1,7 +1,9 @@
 package log
 
 import (
-	"github.com/SoulSu/gitbook-api/env"
+	"fmt"
+
+	"github.com/SoulSu/gitbook-api/libs/env"
 	"github.com/sirupsen/logrus"
 )
 
@@ -16,9 +18,13 @@ var l *logrus.Logger
 
 func init() {
 	l = logrus.New()
-	cfg := new(LogConfig)
-	if err := env.Env.LoadConfig(ConfigFile, cfg); err != nil {
-		panic("err load file:" + ConfigFile + " err:" + err.Error())
+	cfg := LogConfig{
+		Formatter: "",
+		Level:     "debug",
+	}
+	if err := env.Env.LoadConfig(ConfigFile, &cfg); err != nil {
+		fmt.Println("load file:" + err.Error())
+		fmt.Println("use default")
 	}
 	logLevel, err := logrus.ParseLevel(cfg.Level)
 	if err != nil {

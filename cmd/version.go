@@ -12,12 +12,29 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+package cmd
 
 import (
-	"github.com/SoulSu/gitbook-api/cmd"
+	"fmt"
+
+	"github.com/spf13/cobra"
 )
 
-func main() {
-	cmd.Execute()
+var (
+	BuildVersion string
+	BuildTime    string
+)
+
+// versionCmd represents the version command
+var versionCmd = &cobra.Command{
+	Use:   "version",
+	Short: "v",
+	Long:  `get app build version and other info`,
+	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Printf("BuildVersion: %s \nBuildTime: %s\n", BuildVersion, BuildTime)
+	},
+}
+
+func init() {
+	rootCmd.AddCommand(versionCmd)
 }

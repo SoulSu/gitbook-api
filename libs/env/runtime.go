@@ -22,7 +22,7 @@ func (r *Runtime) LoadConfig(file string, cfg interface{}) error {
 	vip.SetConfigFile(filepath.Join(r.ConfigPath, file))
 	err := vip.ReadInConfig()
 	if err != nil {
-		panic(err)
+		return err
 	}
 	return vip.Unmarshal(cfg)
 }

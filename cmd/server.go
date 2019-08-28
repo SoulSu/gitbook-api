@@ -16,7 +16,7 @@ package cmd
 
 import (
 	"github.com/SoulSu/gitbook-api/cmd/server"
-	"github.com/SoulSu/gitbook-api/log"
+	"github.com/SoulSu/gitbook-api/libs/log"
 
 	"github.com/spf13/cobra"
 )
@@ -31,7 +31,7 @@ var serverCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		log.Debugf("start server on:%s", port)
 		if err := server.RunServer(port); err != nil {
-
+			panic("Start server err:" + err.Error())
 		}
 	},
 }

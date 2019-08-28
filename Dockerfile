@@ -4,7 +4,7 @@ LABEL MAINTAINER="soul.sxd@gmail.com"
 
 RUN mkdir -p /app/config
 
-ADD app /app/
+ADD gitbook-api /app/
 
 WORKDIR /app
 
@@ -12,4 +12,4 @@ ENV RUNTIME_CONFIG=/app/config
 
 EXPOSE 8088
 
-CMD ["./app"]
+CMD ["./gitbook-api"]
