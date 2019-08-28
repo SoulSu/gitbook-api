@@ -20,6 +20,6 @@ app
 nohup.log
 
 gitbook-api
-cache
+/cache
 
 .idea
