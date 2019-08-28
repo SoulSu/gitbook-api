@@ -4,13 +4,14 @@ container:
 env:
   GOPROXY: https://gocenter.io
 
+
 test_task:
   modules_cache:
     fingerprint_script: cat go.sum
     folder: $GOPATH/pkg/mod
-  get_script: go get ./...
+  get_script: go mod vendor
   test_script: go test ./...
-  build_script: go build -v -o gitbook-api *.go
+  build_script: make build
   binaries_cache:
     folder: "./gitbook-api"
 
