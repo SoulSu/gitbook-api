@@ -25,7 +25,7 @@ clean:
 	$(GO) clean
 
 docker-build:
-	GOOS=linux GOARCH=amd64 $(TARGET_BUILD)
+#	GOOS=linux GOARCH=amd64 $(TARGET_BUILD)
 	docker build -t soooooul/gitbook-api:$(DockerTag) .
 
 docker-push: docker-build
