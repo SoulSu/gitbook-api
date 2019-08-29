@@ -39,7 +39,11 @@ func NewProxy(cacher cache.BookCacher) (http.Handler, error) {
 		return nil
 	}
 
-	return proxy, proxy.dataCache.Init()
+	if proxy.dataCache != nil {
+		err = proxy.dataCache.Init()
+	}
+
+	return proxy, err
 }
 
 func (p *Proxy) ServeHTTP(w http.ResponseWriter, r *http.Request) {

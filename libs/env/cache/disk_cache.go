@@ -1,6 +1,8 @@
 package cache
 
 import (
+	"crypto/md5"
+	"encoding/hex"
 	"os"
 	"path/filepath"
 	"time"
@@ -33,4 +35,19 @@ func (d *DiskCache) GetIfExists(name string, expireTime time.Time) ([]byte, erro
 
 func (d *DiskCache) Save(name string, data []byte) error {
 	panic("implement me")
+}
+
+// find save file by request name
+func (d *DiskCache) findFileByName(name string) (*os.File, error) {
+
+	fileNameFunc := func(name string) string {
+		md5Hash := md5.New()
+		md5Hash.Write([]byte(name))
+		return hex.EncodeToString(md5Hash.Sum(nil))
+	}
+
+	fileName := fileNameFunc(name)
+	_ = fileName
+
+	return nil, nil
 }

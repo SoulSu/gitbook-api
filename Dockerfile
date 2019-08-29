@@ -27,4 +27,4 @@ ENV RUNTIME_CONFIG=/app/config
 
 EXPOSE 8088
 
-CMD ["./gitbook-api"]
+CMD ["./gitbook-api", "server", "-p", "8088"]
