@@ -1,12 +1,16 @@
-FROM golang:1.12 as builder
+FROM golang:1.12.9-alpine3.10 as builder
 
 WORKDIR /gitbook-api
 ADD . .
 
+
 ENV GOPROXY="https://goproxy.io"
+ENV CGO_ENABLED=0
 
 RUN ls -al && \
     go env && \
+    sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories && \
+    apk add --no-cache make && \
     make build
 
 FROM alpine:latest
